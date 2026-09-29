@@ -32,12 +32,31 @@ export interface Scene {
   locked: boolean;
 }
 
+export type DispositionMethod = "豁免放行" | "调整场次" | "更换资源" | "协调其他";
+
 export interface Conflict {
   id: string;
   type: ConflictType;
   sceneIds: string[];
   message: string;
   severity: "高" | "中";
+  fingerprint: string;
+}
+
+export interface DispositionRecord {
+  id: string;
+  conflictKey: string;
+  fingerprint: string;
+  type: ConflictType;
+  severity: "高" | "中";
+  sceneIds: string[];
+  message: string;
+  method: DispositionMethod;
+  owner: string;
+  deadline: string;
+  note: string;
+  handledAt: string;
+  handler: Role;
 }
 
 export interface HistoryEntry {
@@ -52,6 +71,7 @@ export interface Version {
   name: string;
   time: string;
   scenes: Scene[];
+  dispositions: DispositionRecord[];
 }
 
 export interface OfflineDraft {
