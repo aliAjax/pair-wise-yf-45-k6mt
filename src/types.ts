@@ -40,6 +40,32 @@ export interface Conflict {
   severity: "高" | "中";
 }
 
+export type ResolutionMethod = "调整时间" | "更换演员" | "更换场地" | "协调器材" | "负责人豁免";
+
+export interface SceneSnapshot {
+  sceneId: string;
+  code: string;
+  title: string;
+}
+
+export interface ConflictResolution {
+  id: string;
+  conflictId: string;
+  type: ConflictType;
+  severity: "高" | "中";
+  message: string;
+  sceneIds: string[];
+  sceneSnapshots: SceneSnapshot[];
+  owner: string;
+  deadline: string;
+  note: string;
+  method: ResolutionMethod;
+  exempted: boolean;
+  fingerprint: string;
+  createdAt: string;
+  createdBy: Role;
+}
+
 export interface HistoryEntry {
   id: string;
   action: string;
@@ -52,6 +78,7 @@ export interface Version {
   name: string;
   time: string;
   scenes: Scene[];
+  resolutions: ConflictResolution[];
 }
 
 export interface OfflineDraft {

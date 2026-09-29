@@ -44,7 +44,7 @@ function drop(index: number) {
   <section class="page">
     <div class="metrics">
       <article class="metric"><span>通告场次</span><strong>{{ store.scenes.length }}</strong></article>
-      <article class="metric"><span>待处理冲突</span><strong>{{ store.conflicts.length }}</strong></article>
+      <article class="metric"><span>待处理冲突</span><strong>{{ store.pendingConflicts.length }}</strong></article>
       <article class="metric"><span>已确认</span><strong>{{ store.scenes.filter((item: Scene) => item.status === '已确认').length }}</strong></article>
       <article class="metric"><span>版本快照</span><strong>{{ store.versions.length }}</strong></article>
     </div>

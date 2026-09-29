@@ -30,8 +30,35 @@ label.field { display:grid; gap:7px; color:var(--muted); font-size:13px; } label
 .scene.dragging { opacity:.45; } .scene.locked { border-color:#8b94a6; background:#f3f4f6; cursor:not-allowed; }
 .scene-code { font-weight:900; color:var(--accent); } .scene-title b { display:block; } .scene-title small,.scene-meta small { color:var(--muted); }
 .status { display:inline-block; padding:4px 8px; border-radius:99px; font-size:12px; background:#e8edf4; } .status.已确认 { background:#dff3e8;color:#19704b; } .status.拍摄中 { background:#fff0d4;color:#96600d; } .status.已完成 { background:#e8e5ff;color:#4c42a8; }
-.conflict { display:grid; grid-template-columns:auto 1fr auto; gap:14px; align-items:start; padding:15px; border:1px solid #f2c1b5; border-radius:12px; background:#fff8f5; margin-bottom:10px; } .conflict .seal { padding:7px 9px; border-radius:8px; background:#f25f3a;color:#fff;font-weight:800; }
+.conflict .seal { padding:7px 9px; border-radius:8px; background:#f25f3a;color:#fff;font-weight:800; }
 .history { display:grid; gap:8px; } .history-row { display:grid; grid-template-columns:150px 120px 1fr; gap:12px; padding:11px 0; border-bottom:1px solid var(--line); font-size:14px; } .muted { color:var(--muted); }
 .draft-banner { padding:12px 14px; border-radius:10px; background:#fff4d8; border:1px solid #efcf83; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.ledger-summary { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.status.done { background:#dff3e8; color:#19704b; }
+.status.stale-pill { background:#f3f4f6; color:#68758b; }
+.section-title { margin:4px 0 12px; font-size:15px; color:var(--muted); }
+.conflict { display:grid; grid-template-columns:auto 1fr auto; gap:14px; align-items:center; padding:15px; border:1px solid #f2c1b5; border-radius:12px; background:#fff8f5; margin-bottom:10px; }
+.conflict .conflict-body b { display:block; margin-bottom:4px; } .conflict .conflict-body p { margin:0 0 5px; } .conflict .conflict-body small { color:var(--muted); }
+.seal.small { padding:4px 7px; font-size:12px; border-radius:7px; }
+.ledger { padding:15px; border:1px solid var(--line); border-radius:12px; background:#fbfcfe; margin-bottom:10px; }
+.ledger.stale,.ledger.missing { background:#f6f7f9; opacity:.86; }
+.ledger-head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.ledger-time { margin-left:auto; color:var(--muted); }
+.method-tag { padding:3px 9px; border-radius:99px; font-size:12px; background:#e8e5ff; color:#4c42a8; }
+.state-tag { padding:3px 9px; border-radius:99px; font-size:12px; font-weight:700; background:#dff3e8; color:#19704b; }
+.state-tag.overdue { background:#fff0d4; color:#96600d; }
+.state-tag.stale { background:#eceff4; color:#68758b; }
+.ledger-msg { margin:10px 0; color:var(--ink); }
+.ledger-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px 18px; }
+.ledger-grid label { display:grid; gap:4px; font-size:13px; } .ledger-grid label span { color:var(--muted); font-size:12px; }
+.ledger-grid label.wide { grid-column:1/-1; }
+.ledger-grid b.overdue { color:#c84545; }
+.ledger-warn { display:block; margin-top:10px; color:#96600d; }
+.ledger-form { display:grid; gap:13px; }
+.ledger-form .form-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.ledger-form textarea { resize:vertical; }
+.ledger-target { display:flex; gap:11px; align-items:flex-start; padding:11px 12px; border:1px solid #f2c1b5; border-radius:10px; background:#fff8f5; }
+.ledger-target p { margin:3px 0; font-size:13px; } .ledger-target small { color:var(--muted); }
+.error-text { color:#c84545 !important; }
 @media(max-width:980px){ .app-shell{grid-template-columns:1fr}.sidebar{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center}.network-card{margin:0;width:100%}.grid-2{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)} }
 @media(max-width:680px){ .main{padding:18px}.topbar{align-items:flex-start;flex-direction:column}.scene{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.history-row{grid-template-columns:1fr}.metrics{grid-template-columns:1fr} }
